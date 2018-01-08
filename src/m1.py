@@ -106,7 +106,6 @@ class CircleChanger(object):
         self.circle.fill_color = fill_color
         self.colors = colors
 
-
     def __repr__(self):
         """
         What comes in:
@@ -331,13 +330,17 @@ class CircleChanger(object):
             :type times_to_swell_or_shrink:  int
         """
         ################################################################
-        # TODO: 5.
+        # DONE: 5.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the  run_test_swell_or_shrink_repeatedly  function
         #   (below).  Third, implement and test this method.
         ################################################################
 
-
+        for k in range(times_to_swell_or_shrink):
+            self.swell_or_shrink_once(amount_to_swell_or_shrink)
+            self.draw()
+            self.swell_or_shrink_once(-amount_to_swell_or_shrink)
+            self.draw()
 
     def swallow(self, other_circle_changer):
         """
