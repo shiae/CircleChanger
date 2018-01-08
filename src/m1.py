@@ -274,6 +274,9 @@ class CircleChanger(object):
         ################################################################
 
         self.circle.radius += amount_to_swell_or_shrink
+        self.circle.outline_thickness = random.randrange(3, 16)
+        self.circle.fill_color = self.colors[random.randrange(len(
+            self.colors))]
 
     def swell_or_shrink_repeatedly(self,
                                    amount_to_swell_or_shrink,
@@ -333,6 +336,8 @@ class CircleChanger(object):
         #   Second, READ the  run_test_swell_or_shrink_repeatedly  function
         #   (below).  Third, implement and test this method.
         ################################################################
+
+
 
     def swallow(self, other_circle_changer):
         """
