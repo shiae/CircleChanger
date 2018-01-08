@@ -368,7 +368,7 @@ class CircleChanger(object):
             :rtype CircleChanger
         """
         ################################################################
-        # TODO: 6.
+        # DONE: 6.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_swallow   function (below).
         #   Third, implement and test this method.
@@ -378,6 +378,18 @@ class CircleChanger(object):
         #   the center and radius of the new CircleChanger.
         #   NO CREDIT if you use the distance formula here.
         ################################################################
+
+        new_circle = rg.Circle(self.circle.center.halfway_to(
+            other_circle_changer.circle.center),
+            self.circle.center.get_distance_from(
+                other_circle_changer.circle.center)/2)
+        new_circle_changer = CircleChanger(new_circle.center.x,
+                                          new_circle.center.y,
+                                          new_circle.radius,
+                                          'red', self.colors +
+                                          other_circle_changer.colors)
+
+        return new_circle_changer
 
     def change_color(self, index_of_color):
         """
